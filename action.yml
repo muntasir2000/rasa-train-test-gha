@@ -321,4 +321,6 @@ runs:
       shell: bash
       run: |
         rm -rf ${{ inputs.workspace }}/${{ inputs.report_directory }}/report_main.json
-        sudo chmod -R 777 ${{ inputs.workspace }}
+        id -u
+        id -g
+        chmod -R 777 ${{ inputs.workspace }}/models
